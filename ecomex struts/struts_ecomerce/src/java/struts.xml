@@ -1,0 +1,125 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="autorizarAcesso" class="interceptor.AutorizarAcessoInterceptor">
+            </interceptor>
+            <interceptor-stack name="seguranca">
+                <interceptor-ref name ="defaultStack"></interceptor-ref>
+                <interceptor-ref name ="autorizarAcesso"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="naoLogado">/login.jsp</result>
+        </global-results>
+
+        <action name="testaRestrito" class="struts.action.restrito">
+            <interceptor-ref name="autorizarAcesso"></interceptor-ref>
+            <result name="success">/restrict.jsp</result>
+            <result name="error">/respcadUser.jsp</result>
+        </action>
+
+        <action name="user" class="struts.action.CadastroAction">
+            <result name="input">/cadUser.jsp</result>
+            <result name="success">/respcadUser.jsp</result>
+            <result name="error">/cadUser.jsp</result>
+        </action>
+        
+        <action name="cadastraProdutoAction" class="struts.action.cadastraProdutoAction">
+            <result name="input">/admin/cadProd.jsp</result>
+            <result name="success">/admin/respcadProd.jsp</result>
+            <result name="error">/admin/cadProd.jsp</result>
+        </action>
+         
+        <action name="userLogin" class="struts.action.LoginAction">
+            <result name="input">/login.jsp</result>
+            <result name="success">/respLoginUser.jsp</result>
+            <result name="userAdmin">/homeAdmin.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+        
+        <action name="UserEditAction" class="struts.action.UserEditAction">
+            <interceptor-ref name="seguranca" />
+            <result>/formUserEdit.jsp</result>
+        </action>
+
+        <action name="AtualizaUserAction" class="struts.action.AtualizaUserAction">
+            <interceptor-ref name="seguranca" />
+            <result name="input">/formUserEdit.jsp</result>
+            <result>/respUserEdit.jsp</result>
+        </action>
+
+
+        <action name="acessaAdmin" class="struts.action.logoutAction">
+            <result>/respLogoutUser.jsp</result>
+        </action>
+
+        <action name="logout" class="struts.action.logoutAction">
+            <result>/respLogoutUser.jsp</result>
+        </action>
+        
+        <action name="AdicionaCarrinho" class="struts.action.AdicionaCarrinho">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result name="success" type="chain">Carrinho</result>
+            <result name="naoLogado">/login.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="Carrinho" class="struts.action.Carrinho">
+            <interceptor-ref name="autorizarAcesso"></interceptor-ref>
+            <result name="success">/carrinho.jsp</result>
+        </action>
+
+        <action name="fechaPedido" class="struts.action.fechaPedido">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result>/detalhePedido.jsp</result>
+        </action>
+
+
+        <action name="visualizaPedidos" class="struts.action.visualizaPedidoAction">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result name="success">/visualizaPedidos.jsp</result>
+        </action>
+
+
+        <action name="visualizaDetalhePedido" class="struts.action.visualizaDetahePedido">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result name="success">/visualizaDetalhePedido.jsp</result>
+        </action>
+
+
+
+        <action name="carrinhoExcluir" class="struts.action.carrinhoExcluir">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result name="success" type="chain">Carrinho</result>
+            <result name="error">/login.jsp</result>
+        </action>
+
+
+        <action name="carrinhoAdicionar" class="struts.action.carrinhoAdicionar">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result type="chain">Carrinho</result>
+        </action>
+
+        <action name="pedidoInserir" class="struts.action.pedidoInserir">
+            <interceptor-ref name="seguranca"></interceptor-ref>
+            <result>/respConfirmPedido.jsp</result>
+        </action>
+
+        <action name="listaProdutosIndex" class="struts.action.ListaProdutosAction">
+            <result>/index2.jsp</result>
+        </action>
+
+        <action name="filtraCategoriaAction" class="struts.action.filtraCategoriaAction">
+            <result>/index2.jsp</result>
+        </action>
+        
+
+    </package>
+</struts>

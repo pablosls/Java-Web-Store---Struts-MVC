@@ -1,0 +1,241 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e5e2db;
+}
+
+a:active{
+    background-color: green;
+}
+
+.geral
+{
+    
+    width: 880px;
+    margin: 0 auto;
+    background-color: green;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, ul, ol, dl {
+    margin: 20px 0;
+}
+li, dd, blockquote {
+    margin-left: 40px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img{
+    border: 0px;
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none;
+}
+
+.formButton{
+    background-color: #2A567E;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 0px;
+    margin-top: 4px;
+    text-decoration: none;
+
+}
+.formLabel{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.formInput{
+    height: 22px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 320px;
+    color: #5E5E5E;
+    border: 1px solid #AAA;
+}
+
+.formFieldSet{
+    width: 500px;
+    margin: 0 auto;
+    padding-left: 20px;
+    background-color: #EEE;
+    border: 1px solid #DDDDDE;
+}
+
+
+
+
+#topo
+{
+    width: 880px;
+    height: 190px;
+    background-color: white;
+
+}
+
+.botaoLogin{
+    float: right;
+    height: 42px;
+    width: 106px;
+    background: url("images/botoes/btnLogin.png") no-repeat transparent;
+    border: 0px;
+    overflow: hidden;
+    line-height: 999px;
+    text-indent: -999px;
+    display: block;
+
+}
+
+.menu_lateral{
+    float:left;
+    width: 180px;
+    background-color: white;
+}
+
+
+
+
+
+#topo{
+    background-image: url("images/topo3.jpg");
+    background-repeat: no-repeat;
+    height: 267px;
+}
+
+ul{
+    text-decoration: none;
+}
+
+#menu_topo{
+    
+    padding-top: 227px;
+    padding-left: 370px;
+
+
+
+}
+
+#menu_topo {
+    border:none;
+    margin: 0;
+   
+}
+#menu_topo li {
+    list-style: none; 
+    margin: 0;
+    display: inline;
+    height: 50px;
+    
+}
+#menu_topo li a {
+    color: white;
+    margin:0;
+    /*border: 1px solid darkblue;*/
+    background: #999;
+    background-color: #2A567E;
+    text-decoration: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#menu_topo li a:link {
+    /*color: #2A567E;*/
+
+
+}
+#menu_topo li a:visited {
+    color: #fff;
+}
+#menu_topo li a:hover {
+    background: white;
+    color: #2A567E;
+    /*color: #000;
+    border-color: #000;
+    text-decoration:underline;*/
+}
+
+#menu_topo li a:active {
+    background: white;
+    color: #2A567E;
+    /*color: #000;
+    border-color: #000;
+    text-decoration:underline;*/
+}
+/* menu Vertical */
+
+.menu{
+
+    margin:0 auto; padding:0; width:150px; list-style:none;background:rgb(255,255,255);
+}
+.menu li{padding:0; margin:0 0 1px 0; height:40px; display:block; }
+.menu li a{text-align:left;height:40px; padding:10px 25px; font:16px Verdana, Arial, Helvetica, sans-serif; color:rgb(255,255,255); display:block; background:url('../images/verMenuImages.png') 0px 0px no-repeat; text-decoration:none; outline:none;}
+.menu li a:hover{background:url('images/verMenuImages.png') 0px -40px no-repeat; color:rgb(255,255,255);}
+.menu li a.active, .menu li a.active:hover{background:url('images/verMenuImages.png') 0px -80px no-repeat; color:rgb(255,255,255);}
+.menu li a span{line-height:40px;}
+
+
+/* PRINCIPAL */
+
+.geral, .content, .menu_lateral{
+    background-color: white;
+}
+
+.content{
+    float: left;
+    width: 700px;
+}
+
+.content h3{
+    float: left;
+    width: 700px;
+    color: #2A567E;
+    text-transform: capitalize;
+}
+
+/* RODAPE */
+
+.rodape{
+    color:white;
+    float: left;
+    width: 880px;
+    height: 50px;
+    background-color: #2A567E;
+
+}
+
+#destaque table  {
+    width: 400px;
+}
+
+#destaque table tr {
+    background-color: white;
+    font-size: 20px;
+    height: 80px;
+}
+
+.compre_agora{
+    color: white;
+    background-color: #2A567E;
+    font-weight: bold;
+}
