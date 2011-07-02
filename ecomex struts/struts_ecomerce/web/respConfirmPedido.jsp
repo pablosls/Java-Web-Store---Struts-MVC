@@ -18,7 +18,7 @@
                     <br />
                     <br />
                     <h3 align="center">
-                        <div class="solid-green"> Pedido realizado com sucesso!
+                        <div class="solid-green"> Pedido realizado com sucesso !
                         </div>
                     </h3>
                 </div>
